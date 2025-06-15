@@ -1,0 +1,562 @@
+[
+  {
+    "filename": "img001.jpg",
+    "filepath": "기쁨/감사하는/img001.jpg",
+    "subcategory": "감사하는",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "감사하는"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/감사하는/img001.jpg"
+  },
+  {
+    "filename": "img002.jpg",
+    "filepath": "기쁨/감사하는/img002.jpg",
+    "subcategory": "감사하는",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "감사하는"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/감사하는/img002.jpg"
+  },
+  {
+    "filename": "img003.jpg",
+    "filepath": "기쁨/감사하는/img003.jpg",
+    "subcategory": "감사하는",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "감사하는"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/감사하는/img003.jpg"
+  },
+  {
+    "filename": "img004.jpg",
+    "filepath": "기쁨/감사하는/img004.jpg",
+    "subcategory": "감사하는",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "감사하는"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/감사하는/img004.jpg"
+  },
+  {
+    "filename": "img005.png",
+    "filepath": "기쁨/감사하는/img005.png",
+    "subcategory": "감사하는",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "감사하는"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/감사하는/img005.png"
+  },
+  {
+    "filename": "img006.jpg",
+    "filepath": "기쁨/감사하는/img006.jpg",
+    "subcategory": "감사하는",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "감사하는"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/감사하는/img006.jpg"
+  },
+  {
+    "filename": "img007.jpg",
+    "filepath": "기쁨/감사하는/img007.jpg",
+    "subcategory": "감사하는",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "감사하는"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/감사하는/img007.jpg"
+  },
+  {
+    "filename": "img008.png",
+    "filepath": "기쁨/감사하는/img008.png",
+    "subcategory": "감사하는",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "감사하는"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/감사하는/img008.png"
+  },
+  {
+    "filename": "img009.png",
+    "filepath": "기쁨/감사하는/img009.png",
+    "subcategory": "감사하는",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "감사하는"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/감사하는/img009.png"
+  },
+  {
+    "filename": "img010.jpeg",
+    "filepath": "기쁨/감사하는/img010.jpeg",
+    "subcategory": "감사하는",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "감사하는"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/감사하는/img010.jpeg"
+  },
+  {
+    "filename": "img011.png",
+    "filepath": "기쁨/감사하는/img011.png",
+    "subcategory": "감사하는",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "감사하는"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/감사하는/img011.png"
+  },
+  {
+    "filename": "img012.jpg",
+    "filepath": "기쁨/기쁨/img012.jpg",
+    "subcategory": "기쁨",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "기쁨"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/기쁨/img012.jpg"
+  },
+  {
+    "filename": "img013.jpeg",
+    "filepath": "기쁨/기쁨/img013.jpeg",
+    "subcategory": "기쁨",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "기쁨"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/기쁨/img013.jpeg"
+  },
+  {
+    "filename": "img014.jpg",
+    "filepath": "기쁨/기쁨/img014.jpg",
+    "subcategory": "기쁨",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "기쁨"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/기쁨/img014.jpg"
+  },
+  {
+    "filename": "img015.jpg",
+    "filepath": "기쁨/기쁨/img015.jpg",
+    "subcategory": "기쁨",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "기쁨"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/기쁨/img015.jpg"
+  },
+  {
+    "filename": "img016.jpg",
+    "filepath": "기쁨/기쁨/img016.jpg",
+    "subcategory": "기쁨",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "기쁨"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/기쁨/img016.jpg"
+  },
+  {
+    "filename": "img017.jpg",
+    "filepath": "기쁨/기쁨/img017.jpg",
+    "subcategory": "기쁨",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "기쁨"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/기쁨/img017.jpg"
+  },
+  {
+    "filename": "img018.png",
+    "filepath": "기쁨/기쁨/img018.png",
+    "subcategory": "기쁨",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "기쁨"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/기쁨/img018.png"
+  },
+  {
+    "filename": "img019.jpg",
+    "filepath": "기쁨/기쁨/img019.jpg",
+    "subcategory": "기쁨",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "기쁨"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/기쁨/img019.jpg"
+  },
+  {
+    "filename": "img020.jpg",
+    "filepath": "기쁨/기쁨/img020.jpg",
+    "subcategory": "기쁨",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "기쁨"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/기쁨/img020.jpg"
+  },
+  {
+    "filename": "img021.jpg",
+    "filepath": "기쁨/기쁨/img021.jpg",
+    "subcategory": "기쁨",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "기쁨"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/기쁨/img021.jpg"
+  },
+  {
+    "filename": "img022.jpg",
+    "filepath": "기쁨/기쁨/img022.jpg",
+    "subcategory": "기쁨",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "기쁨"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/기쁨/img022.jpg"
+  },
+  {
+    "filename": "img023.jpg",
+    "filepath": "기쁨/기쁨/img023.jpg",
+    "subcategory": "기쁨",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "기쁨"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/기쁨/img023.jpg"
+  },
+  {
+    "filename": "img024.jpg",
+    "filepath": "기쁨/기쁨/img024.jpg",
+    "subcategory": "기쁨",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "기쁨"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/기쁨/img024.jpg"
+  },
+  {
+    "filename": "img025.jpg",
+    "filepath": "기쁨/기쁨/img025.jpg",
+    "subcategory": "기쁨",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "기쁨"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/기쁨/img025.jpg"
+  },
+  {
+    "filename": "img026.jpg",
+    "filepath": "기쁨/만족스러운/img026.jpg",
+    "subcategory": "만족스러운",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "만족스러운"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/만족스러운/img026.jpg"
+  },
+  {
+    "filename": "img027.jpg",
+    "filepath": "기쁨/만족스러운/img027.jpg",
+    "subcategory": "만족스러운",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "만족스러운"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/만족스러운/img027.jpg"
+  },
+  {
+    "filename": "img028.jpg",
+    "filepath": "기쁨/만족스러운/img028.jpg",
+    "subcategory": "만족스러운",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "만족스러운"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/만족스러운/img028.jpg"
+  },
+  {
+    "filename": "img029.jpg",
+    "filepath": "기쁨/만족스러운/img029.jpg",
+    "subcategory": "만족스러운",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "만족스러운"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/만족스러운/img029.jpg"
+  },
+  {
+    "filename": "img030.jpg",
+    "filepath": "기쁨/만족스러운/img030.jpg",
+    "subcategory": "만족스러운",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "만족스러운"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/만족스러운/img030.jpg"
+  },
+  {
+    "filename": "img031.jpg",
+    "filepath": "기쁨/만족스러운/img031.jpg",
+    "subcategory": "만족스러운",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "만족스러운"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/만족스러운/img031.jpg"
+  },
+  {
+    "filename": "img032.jpg",
+    "filepath": "기쁨/만족스러운/img032.jpg",
+    "subcategory": "만족스러운",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "만족스러운"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/만족스러운/img032.jpg"
+  },
+  {
+    "filename": "img033.jpg",
+    "filepath": "기쁨/만족스러운/img033.jpg",
+    "subcategory": "만족스러운",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "만족스러운"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/만족스러운/img033.jpg"
+  },
+  {
+    "filename": "img034.jpg",
+    "filepath": "기쁨/만족스러운/img034.jpg",
+    "subcategory": "만족스러운",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "만족스러운"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/만족스러운/img034.jpg"
+  },
+  {
+    "filename": "img035.jpg",
+    "filepath": "기쁨/만족스러운/img035.jpg",
+    "subcategory": "만족스러운",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "만족스러운"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/만족스러운/img035.jpg"
+  },
+  {
+    "filename": "img036.jpg",
+    "filepath": "기쁨/만족스러운/img036.jpg",
+    "subcategory": "만족스러운",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "만족스러운"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/만족스러운/img036.jpg"
+  },
+  {
+    "filename": "img037.jpg",
+    "filepath": "기쁨/만족스러운/img037.jpg",
+    "subcategory": "만족스러운",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "만족스러운"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/만족스러운/img037.jpg"
+  },
+  {
+    "filename": "img038.jpg",
+    "filepath": "기쁨/신이 난/img038.jpg",
+    "subcategory": "신이 난",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "신이 난"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/신이 난/img038.jpg"
+  },
+  {
+    "filename": "img039.jpg",
+    "filepath": "기쁨/신이 난/img039.jpg",
+    "subcategory": "신이 난",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "신이 난"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/신이 난/img039.jpg"
+  },
+  {
+    "filename": "img040.jpg",
+    "filepath": "기쁨/신이 난/img040.jpg",
+    "subcategory": "신이 난",
+    "category": "기쁨",
+    "tags": [
+      "기쁨",
+      "신이 난"
+    ],
+    "text_description": "설명 생성 실패",
+    "usage_context": [],
+    "processing_status": "failed",
+    "processed_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/신이 난/img040.jpg"
+  }
+]
