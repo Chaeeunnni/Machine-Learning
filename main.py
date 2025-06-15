@@ -7,41 +7,27 @@ os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
 warnings.filterwarnings("ignore")
 logging.set_verbosity_error()
 
-from models.clip_encoder import CLIPEncoder
-from models.matching import EnhancedMatcher
+from models.hybrid_encoder import HybridEncoder
+from models.matching import HybridMatcher
 import glob
 import numpy as np
 import json
 
 
-class ImprovedMemeRecommender:
+class HybridMemeRecommender:
     def __init__(self, metadata_file="data/enhanced_image_metadata.json"):
-        print("[*] 짤 추천 시스템 초기화 중...")
+        print("[*] 하이브리드 짤 추천 시스템 초기화 중...")
 
-        # 모델 초기화
-        self.clip_encoder = CLIPEncoder()
-        self.matcher = EnhancedMatcher(metadata_file)
+        # 하이브리드 인코더와 매처 초기화
+        self.hybrid_encoder = HybridEncoder()
+        self.matcher = HybridMatcher(metadata_file)
 
-        # 메타데이터에서 이미지 파일 경로 추출
+        # 이미지 로딩 및 임베딩
         self.load_images_from_metadata(metadata_file)
-
-        print(f"[*] 총 {len(self.image_files)}개 이미지 발견")
-
-        # 이미지 임베딩 미리 계산
-        print("[*] 이미지 임베딩 생성 중...")
-        self.image_embeddings = []
-        for i, img_path in enumerate(self.image_files):
-            if i % 10 == 0:
-                print(f"  진행률: {i}/{len(self.image_files)}")
-
-            emb = self.clip_encoder.encode_image(img_path)
-            self.image_embeddings.append(emb)
-
-        self.image_embeddings = np.array(self.image_embeddings)
-        print("[*] 이미지 임베딩 생성 완료!")
+        self.precompute_image_embeddings()
 
     def load_images_from_metadata(self, metadata_file):
-        """메타데이터 파일에서 이미지 경로 로드"""
+        """메타데이터에서 이미지 로딩"""
         self.image_files = []
 
         if os.path.exists(metadata_file):
@@ -76,30 +62,68 @@ class ImprovedMemeRecommender:
         image_patterns = [
             "data/images/기쁨/**/*.jpg",
             "data/images/기쁨/**/*.png",
+            "data/images/기쁨/**/*.jpeg",
+            "data/images/기쁨/**/*.webp",
             "data/images/슬픔/**/*.jpg",
             "data/images/슬픔/**/*.png",
+            "data/images/슬픔/**/*.jpeg",
+            "data/images/슬픔/**/*.webp",
             "data/images/불안/**/*.jpg",
             "data/images/불안/**/*.png",
+            "data/images/불안/**/*.jpeg",
+            "data/images/불안/**/*.webp",
             "data/images/상처/**/*.jpg",
             "data/images/상처/**/*.png",
+            "data/images/상처/**/*.jpeg",
+            "data/images/상처/**/*.webp",
             "data/images/당황/**/*.jpg",
-            "data/images/당황/**/*.png"
+            "data/images/당황/**/*.png",
+            "data/images/당황/**/*.jpeg",
+            "data/images/당황/**/*.webp"
         ]
 
         self.image_files = []
         for pattern in image_patterns:
-            self.image_files.extend(glob.glob(pattern, recursive=True))
+            found_files = glob.glob(pattern, recursive=True)
+            self.image_files.extend(found_files)
+
+        print(f"[*] 폴백 모드로 {len(self.image_files)}개 이미지 로드")
+
+    def precompute_image_embeddings(self):
+        """이미지 임베딩 미리 계산"""
+        if not hasattr(self, 'image_files') or not self.image_files:
+            print("[!] 이미지 파일이 없습니다. 이미지를 확인해주세요.")
+            return
+
+        print("[*] 이미지 임베딩 생성 중...")
+        self.image_embeddings = []
+
+        for i, img_path in enumerate(self.image_files):
+            if i % 10 == 0:
+                print(f"  진행률: {i}/{len(self.image_files)}")
+
+            try:
+                emb = self.hybrid_encoder.get_image_embedding(img_path)
+                self.image_embeddings.append(emb)
+            except Exception as e:
+                print(f"[!] 이미지 임베딩 실패: {img_path}, 오류: {e}")
+                # 0으로 채운 임베딩 추가 (에러 방지)
+                self.image_embeddings.append(np.zeros(512))
+
+        self.image_embeddings = np.array(self.image_embeddings)
+        print(f"[*] 이미지 임베딩 생성 완료! (총 {len(self.image_embeddings)}개)")
 
     def recommend(self, dialogue_text):
-        """대화 텍스트에 대한 이미지 추천"""
-        print(f"\n[*] 분석 중: {dialogue_text[:50]}...")
+        """하이브리드 방식으로 이미지 추천"""
+        if not hasattr(self, 'image_embeddings') or len(self.image_embeddings) == 0:
+            print("[!] 이미지 임베딩이 없습니다.")
+            return None
 
-        # 텍스트 임베딩 생성
-        text_emb = self.clip_encoder.get_text_embedding(dialogue_text)
+        print(f"\n[*] 하이브리드 분석 중: {dialogue_text[:50]}...")
 
-        # 매칭 수행
-        best_idx, score, top_5, emotions, situations = self.matcher.find_best_match(
-            text_emb, self.image_embeddings, self.image_files, dialogue_text
+        # 하이브리드 매칭 수행
+        best_idx, score, top_5, emotions, situations = self.matcher.find_best_match_hybrid(
+            self.hybrid_encoder, dialogue_text, self.image_embeddings, self.image_files
         )
 
         return {
@@ -111,34 +135,43 @@ class ImprovedMemeRecommender:
             'top_5': top_5
         }
 
+    def tune_weights(self, kobert_weight, clip_weight):
+        """가중치 조정"""
+        self.hybrid_encoder.set_weights(kobert_weight, clip_weight)
+
 
 def main():
-    # 추천 시스템 초기화
-    recommender = ImprovedMemeRecommender()
+    # 하이브리드 추천 시스템 초기화
+    recommender = HybridMemeRecommender()
 
-    # 테스트 대화들
+    # 가중치 실험 (선택사항)
+    print("\n[*] 가중치 실험 중...")
+    recommender.tune_weights(0.7, 0.3)  # KoBERT 더 높은 가중치
+
+    # 테스트 실행
     test_cases = [
         "일은 왜 해도 해도 끝이 없을까? 화가 난다.",
         "이번 달에 또 급여가 깎였어! 물가는 오르는데 월급만 자꾸 깎이니까 너무 화가 나.",
         "회사에 신입이 들어왔는데 말투가 거슬려. 스트레스 받아.",
-        "직장에서 막내라는 이유로 나에게만 온갖 심부름을 시켜. 정말 분하고 섭섭해.",
         "오늘 정말 기분이 좋아! 승진 소식을 들었어!",
-        "연인과 헤어져서 너무 슬퍼. 어떻게 해야 할지 모르겠어.",
-        "친구가 도움을 줘서 정말 감사해. 고마워!",
-        "이번 프로젝트가 성공해서 너무 기뻐!"
+        "친구가 도움을 줘서 정말 감사해. 고마워!"
     ]
 
-    print("\n" + "=" * 70)
-    print("🎯 향상된 짤 추천 테스트 시작!")
-    print("=" * 70)
+    print("\n" + "=" * 80)
+    print("🎯 하이브리드(KoBERT + CLIP) 짤 추천 테스트!")
+    print("=" * 80)
 
     for i, dialogue in enumerate(test_cases, 1):
-        print(f"\n【테스트 {i}】")
+        print(f"\n【하이브리드 테스트 {i}】")
         result = recommender.recommend(dialogue)
+
+        if result is None:
+            print("❌ 추천 실패")
+            continue
 
         print(f"🧠 입력: {dialogue}")
         print(f"🎯 추천: {result['best_image']}")
-        print(f"📊 유사도: {result['score']:.4f}")
+        print(f"📊 최종 점수: {result['score']:.4f}")
         print(f"😊 감지 감정: {result['emotions']}")
         print(f"🏢 감지 상황: {result['situations']}")
         print(f"🏆 Top 5:")
