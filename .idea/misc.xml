@@ -3,4 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.13 (MLproject)" />
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="ml_final" project-jdk-type="Python SDK" />
 </project>

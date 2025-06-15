@@ -18,7 +18,7 @@ def describe_image_with_gpt4v(image_path):
             base64_image = base64.b64encode(image_file.read()).decode('utf-8')
 
         response = client.chat.completions.create(
-            model="gpt-4-vision-preview",
+            model="gpt-4o",
             messages=[
                 {
                     "role": "user",
@@ -152,7 +152,7 @@ def verify_image_structure(base_data_path):
 def batch_process_images():
     """배치로 모든 이미지 처리"""
     # 프로젝트 루트 경로 설정
-    project_root = "D:/2025-1(4-2)/MLproject"  # 실제 프로젝트 폴더명에 맞게 수정
+    project_root = "/Users/nahyeon/2025-1/기계학습개론/Machine-Learning"  # 실제 프로젝트 폴더명에 맞게 수정
 
     # 메타데이터 파일 경로
     metadata_path = os.path.join(project_root, "data", "image_metadata.json")
