@@ -82,7 +82,14 @@ class CLIPEncoder:
                 # 정규화
                 text_features = text_features / text_features.norm(dim=-1, keepdim=True)
 
-            return text_features.cpu().numpy()[0]
+            result = text_features.cpu().numpy()[0]
+            if not isinstance(result, np.ndarray):
+                result = np.array(result)
+
+            if result.ndim == 0:
+                result = result.reshape(1)
+
+            return result.astype(np.float32)
 
         except Exception as e:
             print(f"텍스트 임베딩 생성 실패: {text}")
@@ -139,6 +146,20 @@ class CLIPEncoder:
             weighted_similarities: 가중치 적용된 유사도
         """
         try:
+            # 1. 입력 타입 검증
+            if isinstance(text_emb, str):
+                print(f"[!] get_dual_similarities: 텍스트 임베딩이 문자열입니다. 다시 임베딩 생성...")
+                text_emb = self.get_text_embedding(text_emb)
+
+            if text_emb is None:
+                print(f"[!] get_dual_similarities: 텍스트 임베딩이 None입니다.")
+                return np.zeros(len(image_embeddings)), np.zeros(len(image_embeddings)), np.zeros(len(image_embeddings))
+
+            # numpy 배열 확인
+            if not isinstance(text_emb, np.ndarray):
+                text_emb = np.array(text_emb)
+
+
             # 1. 순수 텍스트 유사도 계산
             text_similarities = self._calculate_text_similarity(text_emb, image_embeddings)
 
@@ -163,8 +184,29 @@ class CLIPEncoder:
     def _calculate_text_similarity(self, text_emb, image_embeddings):
         """순수 텍스트-이미지 유사도 계산"""
         try:
-            # 입력 검증
-            if text_emb is None or len(text_emb) == 0:
+            # 1. 입력 타입 검증 및 변환
+            if text_emb is None:
+                print("[!] 텍스트 임베딩이 None입니다")
+                return np.zeros(len(image_embeddings))
+
+            # 문자열이나 잘못된 타입이 들어온 경우 처리
+            if isinstance(text_emb, str):
+                print(f"[!] 텍스트 임베딩이 문자열입니다: {text_emb[:50]}...")
+                print("[!] 문자열을 다시 임베딩으로 변환합니다")
+                text_emb = self.get_text_embedding(text_emb)
+                if text_emb is None:
+                    return np.zeros(len(image_embeddings))
+
+            # numpy 배열로 변환
+            if not isinstance(text_emb, np.ndarray):
+                try:
+                    text_emb = np.array(text_emb)
+                except:
+                    print(f"[!] 텍스트 임베딩을 numpy 배열로 변환할 수 없습니다: {type(text_emb)}")
+                    return np.zeros(len(image_embeddings))
+
+            # 2. 차원 검증
+            if text_emb.size == 0:
                 print("[!] 빈 텍스트 임베딩")
                 return np.zeros(len(image_embeddings))
 
@@ -172,21 +214,51 @@ class CLIPEncoder:
                 print("[!] 빈 이미지 임베딩")
                 return np.array([])
 
-            # 차원 확인 및 조정
+            # 3. 차원 조정
             if text_emb.ndim == 1:
                 text_emb = text_emb.reshape(1, -1)  # (1, 512)
+            elif text_emb.ndim > 2:
+                print(f"[!] 텍스트 임베딩 차원이 너무 큽니다: {text_emb.shape}")
+                text_emb = text_emb.reshape(1, -1)
 
-            # 코사인 유사도 계산
+            # 4. 이미지 임베딩도 검증
+            if not isinstance(image_embeddings, np.ndarray):
+                try:
+                    image_embeddings = np.array(image_embeddings)
+                except:
+                    print(f"[!] 이미지 임베딩을 numpy 배열로 변환할 수 없습니다: {type(image_embeddings)}")
+                    return np.zeros(text_emb.shape[0])
+
+            # 5. 차원 호환성 검사
+            if text_emb.shape[1] != image_embeddings.shape[1]:
+                print(f"[!] 임베딩 차원 불일치: 텍스트 {text_emb.shape}, 이미지 {image_embeddings.shape}")
+                # 차원 맞추기 시도
+                min_dim = min(text_emb.shape[1], image_embeddings.shape[1])
+                text_emb = text_emb[:, :min_dim]
+                image_embeddings = image_embeddings[:, :min_dim]
+
+            # 6. 코사인 유사도 계산
             similarities = cosine_similarity(text_emb, image_embeddings)[0]  # (n_images,)
 
-            # NaN 및 무한대 값 처리
+            # 7. NaN 및 무한대 값 처리
             similarities = np.nan_to_num(similarities, nan=0.0, posinf=1.0, neginf=0.0)
 
             return similarities
 
         except Exception as e:
             print(f"[!] 텍스트 유사도 계산 실패: {e}")
-            return np.zeros(len(image_embeddings))
+            print(f"[!] 텍스트 임베딩 타입: {type(text_emb)}")
+            if hasattr(text_emb, 'shape'):
+                print(f"[!] 텍스트 임베딩 shape: {text_emb.shape}")
+            print(f"[!] 이미지 임베딩 타입: {type(image_embeddings)}")
+            if hasattr(image_embeddings, 'shape'):
+                print(f"[!] 이미지 임베딩 shape: {image_embeddings.shape}")
+
+            # 안전한 폴백
+            if hasattr(image_embeddings, '__len__'):
+                return np.zeros(len(image_embeddings))
+            else:
+                return np.zeros(1)
 
     def _calculate_emotion_weights(self, emotions):
         """감정 기반 가중치 계산"""
