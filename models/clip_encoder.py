@@ -14,6 +14,21 @@ class CLIPEncoder:
             image_features = self.model.encode_image(image)
         return image_features.cpu().numpy()[0]
 
+    def get_text_embedding(self, text):
+        """텍스트를 임베딩으로 변환 - 추가된 메서드"""
+        text_tokens = clip.tokenize([text]).to(self.device)
+        with torch.no_grad():
+            text_features = self.model.encode_text(text_tokens)
+        return text_features.cpu().numpy()[0]
+
+    def encode_text(self, text):
+        """get_text_embedding의 별칭"""
+        return self.get_text_embedding(text)
+
+    def get_image_embedding(self, image_path):
+        """encode_image의 별칭"""
+        return self.encode_image(image_path)
+
     def encode_all_images(self, metadata, image_root):
         embeddings = []
         filenames = []
