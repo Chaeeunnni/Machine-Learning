@@ -18,7 +18,7 @@ def describe_image_with_gpt4v(image_path):
             base64_image = base64.b64encode(image_file.read()).decode('utf-8')
 
         response = client.chat.completions.create(
-            model="gpt-4-vision-preview",
+            model="gpt-4o",
             messages=[
                 {
                     "role": "user",
