@@ -1,0 +1,1055 @@
+[
+  {
+    "input_text": "새로운 프로젝트를 맡게 되어서 설레고 기대돼!",
+    "best_image": "img136.jpg",
+    "best_image_path": "D:/2025-1(4-2)/MLproject\\data\\images\\분노/스트레스 받는/img136.jpg",
+    "score": 0.30497178812377523,
+    "detected_emotions": [],
+    "detected_situations": [
+      "업무"
+    ],
+    "expected_emotion": "기쁘다",
+    "expected_situation": "업무",
+    "top_5": [
+      {
+        "filename": "img136.jpg",
+        "score": 0.30497178812377523,
+        "combined_sim": 0.23853050441291085,
+        "dual_sim": 0.16955212809314923,
+        "kobert_sim": 0.0762978458753502,
+        "clip_sim": 0.3094335514198478,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img080.jpg",
+        "score": 0.28583084961079724,
+        "combined_sim": 0.22355961861898005,
+        "dual_sim": 0.15891053181951625,
+        "kobert_sim": 0.0749673573596484,
+        "clip_sim": 0.284825293509318,
+        "category": "당황",
+        "subcategory": "당황"
+      },
+      {
+        "filename": "img156.jpg",
+        "score": 0.26023268465651334,
+        "combined_sim": 0.18384102793375995,
+        "dual_sim": 0.13067778354491155,
+        "kobert_sim": 0.026751376623549705,
+        "clip_sim": 0.2865673939269543,
+        "category": "분노",
+        "subcategory": "질투하는"
+      },
+      {
+        "filename": "img154.png",
+        "score": 0.2585380424995258,
+        "combined_sim": 0.20221283428492226,
+        "dual_sim": 0.1437368211911952,
+        "kobert_sim": 0.07352091591135268,
+        "clip_sim": 0.249060679110959,
+        "category": "분노",
+        "subcategory": "질투하는"
+      },
+      {
+        "filename": "img037.jpg",
+        "score": 0.24087689634169043,
+        "combined_sim": 0.18839935326345794,
+        "dual_sim": 0.13391792891309917,
+        "kobert_sim": 0.05446191905374444,
+        "clip_sim": 0.25310194370213124,
+        "category": "기쁨",
+        "subcategory": "만족스러운"
+      }
+    ],
+    "emotion_match": false,
+    "situation_match": true
+  },
+  {
+    "input_text": "상사가 계속 야근을 시켜서 정말 지쳤어. 언제까지 이래야 하나.",
+    "best_image": "img144.jpg",
+    "best_image_path": "D:/2025-1(4-2)/MLproject\\data\\images\\분노/억울한/img144.jpg",
+    "score": 0.24057427252786504,
+    "detected_emotions": [],
+    "detected_situations": [
+      "직장"
+    ],
+    "expected_emotion": "화나다",
+    "expected_situation": "직장",
+    "top_5": [
+      {
+        "filename": "img144.jpg",
+        "score": 0.24057427252786504,
+        "combined_sim": 0.2634091247047136,
+        "dual_sim": 0.18729295078188507,
+        "kobert_sim": 0.10617742450699211,
+        "clip_sim": 0.3089662401942245,
+        "category": "분노",
+        "subcategory": "억울한"
+      },
+      {
+        "filename": "img136.jpg",
+        "score": 0.21093524083926718,
+        "combined_sim": 0.23095681211480928,
+        "dual_sim": 0.16421824119633563,
+        "kobert_sim": 0.06513373733457119,
+        "clip_sim": 0.3128449969889823,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img130.jpg",
+        "score": 0.20967146577632403,
+        "combined_sim": 0.22957308141453547,
+        "dual_sim": 0.1632343626204974,
+        "kobert_sim": 0.07952413084713181,
+        "clip_sim": 0.2887997102805458,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img043.jpg",
+        "score": 0.20887030051861324,
+        "combined_sim": 0.22869587208313874,
+        "dual_sim": 0.16261063353472052,
+        "kobert_sim": 0.0690016234250659,
+        "clip_sim": 0.30302414869920247,
+        "category": "기쁨",
+        "subcategory": "신이 난"
+      },
+      {
+        "filename": "img080.jpg",
+        "score": 0.2016968569206682,
+        "combined_sim": 0.22084153813861337,
+        "dual_sim": 0.15702593407879617,
+        "kobert_sim": 0.06031937743102818,
+        "clip_sim": 0.30208576905044815,
+        "category": "당황",
+        "subcategory": "당황"
+      }
+    ],
+    "emotion_match": false,
+    "situation_match": true
+  },
+  {
+    "input_text": "팀원들과 협업이 잘 안 되어서 프로젝트가 늦어지고 있어. 답답해.",
+    "best_image": "img136.jpg",
+    "best_image_path": "D:/2025-1(4-2)/MLproject\\data\\images\\분노/스트레스 받는/img136.jpg",
+    "score": 0.43641003746934254,
+    "detected_emotions": [
+      "화나다"
+    ],
+    "detected_situations": [
+      "업무"
+    ],
+    "expected_emotion": "화나다",
+    "expected_situation": "업무",
+    "top_5": [
+      {
+        "filename": "img136.jpg",
+        "score": 0.43641003746934254,
+        "combined_sim": 0.21715667455318433,
+        "dual_sim": 0.15452842220824034,
+        "kobert_sim": 0.05471177332650103,
+        "clip_sim": 0.3042533955308493,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img080.jpg",
+        "score": 0.41983496429559325,
+        "combined_sim": 0.19557433993093384,
+        "dual_sim": 0.13917046114781143,
+        "kobert_sim": 0.04114515264424349,
+        "clip_sim": 0.2862084239031633,
+        "category": "당황",
+        "subcategory": "당황"
+      },
+      {
+        "filename": "img154.png",
+        "score": 0.41575930780732223,
+        "combined_sim": 0.20688091675069942,
+        "dual_sim": 0.14721620607764416,
+        "kobert_sim": 0.07793708885568218,
+        "clip_sim": 0.2511348819105871,
+        "category": "분노",
+        "subcategory": "질투하는"
+      },
+      {
+        "filename": "img144.jpg",
+        "score": 0.3942864540971004,
+        "combined_sim": 0.23979519963764684,
+        "dual_sim": 0.17063796769197292,
+        "kobert_sim": 0.08304361874779888,
+        "clip_sim": 0.302029491108234,
+        "category": "분노",
+        "subcategory": "억울한"
+      },
+      {
+        "filename": "img149.jpg",
+        "score": 0.369253595704177,
+        "combined_sim": 0.1837397768924528,
+        "dual_sim": 0.1307489989239389,
+        "kobert_sim": 0.035333514395646345,
+        "clip_sim": 0.2738722257163777,
+        "category": "분노",
+        "subcategory": "억울한"
+      }
+    ],
+    "emotion_match": true,
+    "situation_match": true
+  },
+  {
+    "input_text": "오랜만에 친구들과 만나서 수다 떨었는데 너무 즐거웠어!",
+    "best_image": "img043.jpg",
+    "best_image_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/신이 난/img043.jpg",
+    "score": 0.3883800617064329,
+    "detected_emotions": [
+      "기쁘다"
+    ],
+    "detected_situations": [
+      "인간관계"
+    ],
+    "expected_emotion": "기쁘다",
+    "expected_situation": "인간관계",
+    "top_5": [
+      {
+        "filename": "img043.jpg",
+        "score": 0.3883800617064329,
+        "combined_sim": 0.23660263396774117,
+        "dual_sim": 0.16714952390199825,
+        "kobert_sim": 0.08409509862821198,
+        "clip_sim": 0.29173116181267766,
+        "category": "기쁨",
+        "subcategory": "신이 난"
+      },
+      {
+        "filename": "img050.jpg",
+        "score": 0.3830079515780818,
+        "combined_sim": 0.23332992368904065,
+        "dual_sim": 0.16483749579609366,
+        "kobert_sim": 0.08130289483339005,
+        "clip_sim": 0.2901393972401491,
+        "category": "기쁨",
+        "subcategory": "신이 난"
+      },
+      {
+        "filename": "img020.jpg",
+        "score": 0.34506326344637783,
+        "combined_sim": 0.19404357493210928,
+        "dual_sim": 0.13708339087871568,
+        "kobert_sim": 0.031525184733149476,
+        "clip_sim": 0.295420700097065,
+        "category": "기쁨",
+        "subcategory": "기쁨"
+      },
+      {
+        "filename": "img034.jpg",
+        "score": 0.34428063122977937,
+        "combined_sim": 0.20973709030373933,
+        "dual_sim": 0.148170180457533,
+        "kobert_sim": 0.05024654928538346,
+        "clip_sim": 0.2950556272157573,
+        "category": "기쁨",
+        "subcategory": "만족스러운"
+      },
+      {
+        "filename": "img024.jpg",
+        "score": 0.33093043741747274,
+        "combined_sim": 0.20160410079280477,
+        "dual_sim": 0.14242457484914578,
+        "kobert_sim": 0.03189183915120519,
+        "clip_sim": 0.30822367839605663,
+        "category": "기쁨",
+        "subcategory": "기쁨"
+      }
+    ],
+    "emotion_match": true,
+    "situation_match": true
+  },
+  {
+    "input_text": "친구가 약속을 자꾸 취소해서 서운해. 나만 소중하게 여기나 봐.",
+    "best_image": "img144.jpg",
+    "best_image_path": "D:/2025-1(4-2)/MLproject\\data\\images\\분노/억울한/img144.jpg",
+    "score": 0.2411006927040895,
+    "detected_emotions": [],
+    "detected_situations": [
+      "인간관계",
+      "개인적"
+    ],
+    "expected_emotion": "슬프다",
+    "expected_situation": "인간관계",
+    "top_5": [
+      {
+        "filename": "img144.jpg",
+        "score": 0.2411006927040895,
+        "combined_sim": 0.26399399736712137,
+        "dual_sim": 0.18768298182368182,
+        "kobert_sim": 0.11679223860808831,
+        "clip_sim": 0.2940190966470721,
+        "category": "분노",
+        "subcategory": "억울한"
+      },
+      {
+        "filename": "img136.jpg",
+        "score": 0.2189352993066353,
+        "combined_sim": 0.23972392652838873,
+        "dual_sim": 0.1704285024558773,
+        "kobert_sim": 0.07483705985290551,
+        "clip_sim": 0.313815666360335,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img043.jpg",
+        "score": 0.21675747272453527,
+        "combined_sim": 0.23733930854017765,
+        "dual_sim": 0.16873318915470306,
+        "kobert_sim": 0.08145568285430146,
+        "clip_sim": 0.29964944860530546,
+        "category": "기쁨",
+        "subcategory": "신이 난"
+      },
+      {
+        "filename": "img083.jpg",
+        "score": 0.21544545375982072,
+        "combined_sim": 0.20513279011932206,
+        "dual_sim": 0.1458363991703377,
+        "kobert_sim": 0.04267221311696119,
+        "clip_sim": 0.30058267825040247,
+        "category": "당황",
+        "subcategory": "당황"
+      },
+      {
+        "filename": "img130.jpg",
+        "score": 0.212101108536443,
+        "combined_sim": 0.2322408062824678,
+        "dual_sim": 0.16510848046238527,
+        "kobert_sim": 0.08667580534855736,
+        "clip_sim": 0.28275749313312715,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      }
+    ],
+    "emotion_match": false,
+    "situation_match": true
+  },
+  {
+    "input_text": "가족들이 내 선택을 믿어주고 응원해줘서 든든해.",
+    "best_image": "img144.jpg",
+    "best_image_path": "D:/2025-1(4-2)/MLproject\\data\\images\\분노/억울한/img144.jpg",
+    "score": 0.24727995154951218,
+    "detected_emotions": [],
+    "detected_situations": [],
+    "expected_emotion": "감사하다",
+    "expected_situation": "인간관계",
+    "top_5": [
+      {
+        "filename": "img144.jpg",
+        "score": 0.24727995154951218,
+        "combined_sim": 0.27069354139001855,
+        "dual_sim": 0.19264824192166402,
+        "kobert_sim": 0.11572464393205956,
+        "clip_sim": 0.3080336389060707,
+        "category": "분노",
+        "subcategory": "억울한"
+      },
+      {
+        "filename": "img136.jpg",
+        "score": 0.21642822461804295,
+        "combined_sim": 0.23692063233821997,
+        "dual_sim": 0.16861260660429664,
+        "kobert_sim": 0.07402868496728945,
+        "clip_sim": 0.3104884890598074,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img080.jpg",
+        "score": 0.21167599768424755,
+        "combined_sim": 0.23171844274316522,
+        "dual_sim": 0.16491029254677303,
+        "kobert_sim": 0.07238364414375549,
+        "clip_sim": 0.30370026515129933,
+        "category": "당황",
+        "subcategory": "당황"
+      },
+      {
+        "filename": "img043.jpg",
+        "score": 0.21126483986416905,
+        "combined_sim": 0.23126835532981943,
+        "dual_sim": 0.16458997044431828,
+        "kobert_sim": 0.08190587020295736,
+        "clip_sim": 0.2886161208063597,
+        "category": "기쁨",
+        "subcategory": "신이 난"
+      },
+      {
+        "filename": "img050.jpg",
+        "score": 0.2091249490059226,
+        "combined_sim": 0.22892584989583398,
+        "dual_sim": 0.1629228469294627,
+        "kobert_sim": 0.08395304818359994,
+        "clip_sim": 0.28137754504825685,
+        "category": "기쁨",
+        "subcategory": "신이 난"
+      }
+    ],
+    "emotion_match": false,
+    "situation_match": false
+  },
+  {
+    "input_text": "연인이 깜짝 선물을 줘서 감동받았어. 이런 마음 오래 가길.",
+    "best_image": "img144.jpg",
+    "best_image_path": "D:/2025-1(4-2)/MLproject\\data\\images\\분노/억울한/img144.jpg",
+    "score": 0.23601112179226208,
+    "detected_emotions": [
+      "놀랍다"
+    ],
+    "detected_situations": [
+      "연애"
+    ],
+    "expected_emotion": "기쁘다",
+    "expected_situation": "연애",
+    "top_5": [
+      {
+        "filename": "img144.jpg",
+        "score": 0.23601112179226208,
+        "combined_sim": 0.25823105107643374,
+        "dual_sim": 0.184164620129195,
+        "kobert_sim": 0.10418806045368145,
+        "clip_sim": 0.30412945964246524,
+        "category": "분노",
+        "subcategory": "억울한"
+      },
+      {
+        "filename": "img100.jpg",
+        "score": 0.22384900332656688,
+        "combined_sim": 0.17494564001258925,
+        "dual_sim": 0.12476732408149871,
+        "kobert_sim": 0.022255540928649963,
+        "clip_sim": 0.2785349988107718,
+        "category": "당황",
+        "subcategory": "부끄러운"
+      },
+      {
+        "filename": "img130.jpg",
+        "score": 0.21522943040558395,
+        "combined_sim": 0.23549280813264029,
+        "dual_sim": 0.16794821570911925,
+        "kobert_sim": 0.08738029822663351,
+        "clip_sim": 0.28880009193284784,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img136.jpg",
+        "score": 0.20612436689310693,
+        "combined_sim": 0.2255305234331268,
+        "dual_sim": 0.16084333496639394,
+        "kobert_sim": 0.06659678240310367,
+        "clip_sim": 0.30221316381132934,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img043.jpg",
+        "score": 0.20056680442778732,
+        "combined_sim": 0.21944972904958843,
+        "dual_sim": 0.1565066469769181,
+        "kobert_sim": 0.06826799477396585,
+        "clip_sim": 0.2888646252813465,
+        "category": "기쁨",
+        "subcategory": "신이 난"
+      }
+    ],
+    "emotion_match": false,
+    "situation_match": true
+  },
+  {
+    "input_text": "연인과 자꾸 다투게 되는데 서로 이해가 안 되는 것 같아.",
+    "best_image": "img136.jpg",
+    "best_image_path": "D:/2025-1(4-2)/MLproject\\data\\images\\분노/스트레스 받는/img136.jpg",
+    "score": 0.2230921552291638,
+    "detected_emotions": [],
+    "detected_situations": [
+      "연애"
+    ],
+    "expected_emotion": "슬프다",
+    "expected_situation": "연애",
+    "top_5": [
+      {
+        "filename": "img136.jpg",
+        "score": 0.2230921552291638,
+        "combined_sim": 0.2124418534795065,
+        "dual_sim": 0.15094627008162642,
+        "kobert_sim": 0.04976447590671916,
+        "clip_sim": 0.3027189613439873,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img144.jpg",
+        "score": 0.21494856481510918,
+        "combined_sim": 0.23539008928002475,
+        "dual_sim": 0.1672516743969729,
+        "kobert_sim": 0.07586616248972745,
+        "clip_sim": 0.30432994225784105,
+        "category": "분노",
+        "subcategory": "억울한"
+      },
+      {
+        "filename": "img083.jpg",
+        "score": 0.2131865759136903,
+        "combined_sim": 0.203009161267172,
+        "dual_sim": 0.14424406114091845,
+        "kobert_sim": 0.03631938490170996,
+        "clip_sim": 0.3061310754997312,
+        "category": "당황",
+        "subcategory": "당황"
+      },
+      {
+        "filename": "img130.jpg",
+        "score": 0.20788642993079917,
+        "combined_sim": 0.22765634723672507,
+        "dual_sim": 0.16175662288363876,
+        "kobert_sim": 0.07767365166792665,
+        "clip_sim": 0.2878810797072069,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img100.jpg",
+        "score": 0.20622699496594746,
+        "combined_sim": 0.16131364408222182,
+        "dual_sim": 0.11461815182230972,
+        "kobert_sim": 0.0055627251382178375,
+        "clip_sim": 0.27820129184844755,
+        "category": "당황",
+        "subcategory": "부끄러운"
+      }
+    ],
+    "emotion_match": false,
+    "situation_match": true
+  },
+  {
+    "input_text": "보너스를 받아서 가족들과 맛있는 거 먹으러 갈 수 있겠어!",
+    "best_image": "img130.jpg",
+    "best_image_path": "D:/2025-1(4-2)/MLproject\\data\\images\\분노/스트레스 받는/img130.jpg",
+    "score": 0.20431820603837048,
+    "detected_emotions": [],
+    "detected_situations": [],
+    "expected_emotion": "기쁘다",
+    "expected_situation": "돈",
+    "top_5": [
+      {
+        "filename": "img130.jpg",
+        "score": 0.20431820603837048,
+        "combined_sim": 0.22384735103562847,
+        "dual_sim": 0.15875020104476856,
+        "kobert_sim": 0.07467873515614472,
+        "clip_sim": 0.2848573998777043,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img144.jpg",
+        "score": 0.20245402854116518,
+        "combined_sim": 0.22180499270042384,
+        "dual_sim": 0.15730177883622837,
+        "kobert_sim": 0.06227795560224616,
+        "clip_sim": 0.2998375136872017,
+        "category": "분노",
+        "subcategory": "억울한"
+      },
+      {
+        "filename": "img136.jpg",
+        "score": 0.19246034489226665,
+        "combined_sim": 0.21085609218335827,
+        "dual_sim": 0.1495369345463862,
+        "kobert_sim": 0.05136759245824272,
+        "clip_sim": 0.2967909476786014,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img043.jpg",
+        "score": 0.19155591279139417,
+        "combined_sim": 0.20986521306896533,
+        "dual_sim": 0.1488342121437281,
+        "kobert_sim": 0.05580278036381267,
+        "clip_sim": 0.28838135981360125,
+        "category": "기쁨",
+        "subcategory": "신이 난"
+      },
+      {
+        "filename": "img154.png",
+        "score": 0.18631207928702384,
+        "combined_sim": 0.20412016291258822,
+        "dual_sim": 0.144759884160707,
+        "kobert_sim": 0.06943230296807917,
+        "clip_sim": 0.25775125594964876,
+        "category": "분노",
+        "subcategory": "질투하는"
+      }
+    ],
+    "emotion_match": false,
+    "situation_match": false
+  },
+  {
+    "input_text": "물가가 너무 올라서 생활비가 부족해. 어떻게 절약해야 할까.",
+    "best_image": "img144.jpg",
+    "best_image_path": "D:/2025-1(4-2)/MLproject\\data\\images\\분노/억울한/img144.jpg",
+    "score": 0.23374035541113272,
+    "detected_emotions": [],
+    "detected_situations": [],
+    "expected_emotion": "화나다",
+    "expected_situation": "돈",
+    "top_5": [
+      {
+        "filename": "img144.jpg",
+        "score": 0.23374035541113272,
+        "combined_sim": 0.25585775220736384,
+        "dual_sim": 0.18213309621992685,
+        "kobert_sim": 0.10416852840762639,
+        "clip_sim": 0.29907994793837755,
+        "category": "분노",
+        "subcategory": "억울한"
+      },
+      {
+        "filename": "img130.jpg",
+        "score": 0.21080591870089732,
+        "combined_sim": 0.23075317130298664,
+        "dual_sim": 0.1642623292960222,
+        "kobert_sim": 0.08510380177807726,
+        "clip_sim": 0.2830001205729396,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img136.jpg",
+        "score": 0.20312822136834152,
+        "combined_sim": 0.22234898175964316,
+        "dual_sim": 0.1582797804553044,
+        "kobert_sim": 0.0659887403468663,
+        "clip_sim": 0.29671634061796154,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img043.jpg",
+        "score": 0.20118634065919389,
+        "combined_sim": 0.2202233534153319,
+        "dual_sim": 0.15676664422820524,
+        "kobert_sim": 0.06922049764617595,
+        "clip_sim": 0.28808586410124915,
+        "category": "기쁨",
+        "subcategory": "신이 난"
+      },
+      {
+        "filename": "img079.jpg",
+        "score": 0.20117344397274084,
+        "combined_sim": 0.19148629261675143,
+        "dual_sim": 0.13631008236595926,
+        "kobert_sim": 0.05163349737374201,
+        "clip_sim": 0.2633249598542851,
+        "category": "당황",
+        "subcategory": "당황"
+      }
+    ],
+    "emotion_match": false,
+    "situation_match": false
+  },
+  {
+    "input_text": "운동을 꾸준히 해서 몸이 가벼워진 느낌이야. 뿌듯해!",
+    "best_image": "img058.jpg",
+    "best_image_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/자신하는/img058.jpg",
+    "score": 0.31113239880858695,
+    "detected_emotions": [
+      "자신하다"
+    ],
+    "detected_situations": [],
+    "expected_emotion": "기쁘다",
+    "expected_situation": "개인적",
+    "top_5": [
+      {
+        "filename": "img058.jpg",
+        "score": 0.31113239880858695,
+        "combined_sim": 0.1789674329554958,
+        "dual_sim": 0.12825563680311847,
+        "kobert_sim": 0.012988722005287973,
+        "clip_sim": 0.30115600899986417,
+        "category": "기쁨",
+        "subcategory": "자신하는"
+      },
+      {
+        "filename": "img059.jpg",
+        "score": 0.3068931886406075,
+        "combined_sim": 0.17652898312015916,
+        "dual_sim": 0.12650814226455404,
+        "kobert_sim": 0.042270480755586676,
+        "clip_sim": 0.25286463452800506,
+        "category": "기쁨",
+        "subcategory": "자신하는"
+      },
+      {
+        "filename": "img057.png",
+        "score": 0.2778935261768232,
+        "combined_sim": 0.15984799770784072,
+        "dual_sim": 0.1145538407463071,
+        "kobert_sim": -0.003661468242366718,
+        "clip_sim": 0.29187680422931783,
+        "category": "기쁨",
+        "subcategory": "자신하는"
+      },
+      {
+        "filename": "img061.jpg",
+        "score": 0.2762013490690628,
+        "combined_sim": 0.1588746351811797,
+        "dual_sim": 0.1138562882071821,
+        "kobert_sim": 0.01648261514447328,
+        "clip_sim": 0.2599167978012453,
+        "category": "기쁨",
+        "subcategory": "자신하는"
+      },
+      {
+        "filename": "img144.jpg",
+        "score": 0.22153847561348225,
+        "combined_sim": 0.24212048495420507,
+        "dual_sim": 0.17351378715179572,
+        "kobert_sim": 0.0942230728501934,
+        "clip_sim": 0.29244985860419914,
+        "category": "분노",
+        "subcategory": "억울한"
+      }
+    ],
+    "emotion_match": false,
+    "situation_match": false
+  },
+  {
+    "input_text": "계속 아파서 병원에 갔는데 큰 문제는 없다고 해서 안심이야.",
+    "best_image": "img144.jpg",
+    "best_image_path": "D:/2025-1(4-2)/MLproject\\data\\images\\분노/억울한/img144.jpg",
+    "score": 0.22422944782453247,
+    "detected_emotions": [],
+    "detected_situations": [],
+    "expected_emotion": "편안하다",
+    "expected_situation": "개인적",
+    "top_5": [
+      {
+        "filename": "img144.jpg",
+        "score": 0.22422944782453247,
+        "combined_sim": 0.2452385379258697,
+        "dual_sim": 0.17520823758807902,
+        "kobert_sim": 0.10054437511605421,
+        "clip_sim": 0.2872040312961162,
+        "category": "분노",
+        "subcategory": "억울한"
+      },
+      {
+        "filename": "img130.jpg",
+        "score": 0.2068278820328383,
+        "combined_sim": 0.22620653851767944,
+        "dual_sim": 0.1616110169015423,
+        "kobert_sim": 0.08905594441366328,
+        "clip_sim": 0.27044362563336083,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img136.jpg",
+        "score": 0.20579381757742632,
+        "combined_sim": 0.225075588300012,
+        "dual_sim": 0.16080301922472642,
+        "kobert_sim": 0.06866685621543052,
+        "clip_sim": 0.29900726373867026,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img079.jpg",
+        "score": 0.1941868999516136,
+        "combined_sim": 0.18467927434187265,
+        "dual_sim": 0.13194227277219164,
+        "kobert_sim": 0.06066683281229479,
+        "clip_sim": 0.23885543271203694,
+        "category": "당황",
+        "subcategory": "당황"
+      },
+      {
+        "filename": "img080.jpg",
+        "score": 0.193910143396231,
+        "combined_sim": 0.21207847756518108,
+        "dual_sim": 0.15151736366868082,
+        "kobert_sim": 0.06268093842351133,
+        "clip_sim": 0.28477200153643506,
+        "category": "당황",
+        "subcategory": "당황"
+      }
+    ],
+    "emotion_match": false,
+    "situation_match": false
+  },
+  {
+    "input_text": "새로운 기술을 배우는 게 어렵지만 조금씩 늘고 있는 것 같아.",
+    "best_image": "img136.jpg",
+    "best_image_path": "D:/2025-1(4-2)/MLproject\\data\\images\\분노/스트레스 받는/img136.jpg",
+    "score": 0.25239269572488204,
+    "detected_emotions": [],
+    "detected_situations": [],
+    "expected_emotion": "자신하다",
+    "expected_situation": "개인적",
+    "top_5": [
+      {
+        "filename": "img136.jpg",
+        "score": 0.25239269572488204,
+        "combined_sim": 0.240583198480696,
+        "dual_sim": 0.17021223463165736,
+        "kobert_sim": 0.07625580652832335,
+        "clip_sim": 0.31114687678665837,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img080.jpg",
+        "score": 0.2503362358535217,
+        "combined_sim": 0.23862296057184681,
+        "dual_sim": 0.1688253698353191,
+        "kobert_sim": 0.07984111227867526,
+        "clip_sim": 0.3023017561702848,
+        "category": "당황",
+        "subcategory": "당황"
+      },
+      {
+        "filename": "img144.jpg",
+        "score": 0.24690071896215376,
+        "combined_sim": 0.2706504214623106,
+        "dual_sim": 0.1914847464617878,
+        "kobert_sim": 0.1139921237486678,
+        "clip_sim": 0.30772368053146787,
+        "category": "분노",
+        "subcategory": "억울한"
+      },
+      {
+        "filename": "img083.jpg",
+        "score": 0.224066878264054,
+        "combined_sim": 0.21358275085723033,
+        "dual_sim": 0.1511094603593728,
+        "kobert_sim": 0.05116775977287124,
+        "clip_sim": 0.30102201123912514,
+        "category": "당황",
+        "subcategory": "당황"
+      },
+      {
+        "filename": "img043.jpg",
+        "score": 0.22289828850837037,
+        "combined_sim": 0.24433916594156702,
+        "dual_sim": 0.17286957449757823,
+        "kobert_sim": 0.08974466384784895,
+        "clip_sim": 0.2975569404721721,
+        "category": "기쁨",
+        "subcategory": "신이 난"
+      }
+    ],
+    "emotion_match": false,
+    "situation_match": false
+  },
+  {
+    "input_text": "시험 결과가 생각보다 안 좋아서 실망스러워.",
+    "best_image": "img043.jpg",
+    "best_image_path": "D:/2025-1(4-2)/MLproject\\data\\images\\기쁨/신이 난/img043.jpg",
+    "score": 0.38020521032475335,
+    "detected_emotions": [
+      "기쁘다"
+    ],
+    "detected_situations": [],
+    "expected_emotion": "슬프다",
+    "expected_situation": "개인적",
+    "top_5": [
+      {
+        "filename": "img043.jpg",
+        "score": 0.38020521032475335,
+        "combined_sim": 0.2309746439771102,
+        "dual_sim": 0.1651428868770269,
+        "kobert_sim": 0.0750978756412411,
+        "clip_sim": 0.3002104037307056,
+        "category": "기쁨",
+        "subcategory": "신이 난"
+      },
+      {
+        "filename": "img050.jpg",
+        "score": 0.3678424825370249,
+        "combined_sim": 0.2234642875123944,
+        "dual_sim": 0.15977311161371846,
+        "kobert_sim": 0.07861383537230643,
+        "clip_sim": 0.28151202597583647,
+        "category": "기쁨",
+        "subcategory": "신이 난"
+      },
+      {
+        "filename": "img034.jpg",
+        "score": 0.3403123128466388,
+        "combined_sim": 0.2067397107503178,
+        "dual_sim": 0.14781532833562666,
+        "kobert_sim": 0.04418936764541391,
+        "clip_sim": 0.3032542693709458,
+        "category": "기쁨",
+        "subcategory": "만족스러운"
+      },
+      {
+        "filename": "img027.jpg",
+        "score": 0.3382877833238524,
+        "combined_sim": 0.17205472425074647,
+        "dual_sim": 0.12301616019609142,
+        "kobert_sim": 0.0373814557990471,
+        "clip_sim": 0.2514682167916579,
+        "category": "기쁨",
+        "subcategory": "만족스러운"
+      },
+      {
+        "filename": "img037.jpg",
+        "score": 0.33076951790804776,
+        "combined_sim": 0.18548535094709623,
+        "dual_sim": 0.13261882712010498,
+        "kobert_sim": 0.04957622646648813,
+        "clip_sim": 0.2571827281005303,
+        "category": "기쁨",
+        "subcategory": "만족스러운"
+      }
+    ],
+    "emotion_match": false,
+    "situation_match": false
+  },
+  {
+    "input_text": "새로운 도시로 이사 가는 게 설레지만 한편으로는 걱정도 돼.",
+    "best_image": "img144.jpg",
+    "best_image_path": "D:/2025-1(4-2)/MLproject\\data\\images\\분노/억울한/img144.jpg",
+    "score": 0.23947652230745592,
+    "detected_emotions": [
+      "무섭다"
+    ],
+    "detected_situations": [],
+    "expected_emotion": "기쁘다",
+    "expected_situation": "개인적",
+    "top_5": [
+      {
+        "filename": "img144.jpg",
+        "score": 0.23947652230745592,
+        "combined_sim": 0.2621341616039297,
+        "dual_sim": 0.18660869728235047,
+        "kobert_sim": 0.11680762759780461,
+        "clip_sim": 0.2913103018091693,
+        "category": "분노",
+        "subcategory": "억울한"
+      },
+      {
+        "filename": "img136.jpg",
+        "score": 0.2158441332987165,
+        "combined_sim": 0.23626583649696278,
+        "dual_sim": 0.16819349250280857,
+        "kobert_sim": 0.07355697857265492,
+        "clip_sim": 0.310148263398039,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img043.jpg",
+        "score": 0.21526136269442514,
+        "combined_sim": 0.23562792855644601,
+        "dual_sim": 0.1677393756830431,
+        "kobert_sim": 0.08123871716151881,
+        "clip_sim": 0.29749036346532953,
+        "category": "기쁨",
+        "subcategory": "신이 난"
+      },
+      {
+        "filename": "img130.jpg",
+        "score": 0.211142537090996,
+        "combined_sim": 0.2311194066814148,
+        "dual_sim": 0.16452984138001883,
+        "kobert_sim": 0.08471301387790826,
+        "clip_sim": 0.28425508263318466,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img080.jpg",
+        "score": 0.2096561423647379,
+        "combined_sim": 0.22949237969064712,
+        "dual_sim": 0.1633715886042831,
+        "kobert_sim": 0.07489098224340418,
+        "clip_sim": 0.2960924981456015,
+        "category": "당황",
+        "subcategory": "당황"
+      }
+    ],
+    "emotion_match": false,
+    "situation_match": false
+  },
+  {
+    "input_text": "퇴사를 결심했는데 자유로우면서도 미래가 불안해.",
+    "best_image": "img144.jpg",
+    "best_image_path": "D:/2025-1(4-2)/MLproject\\data\\images\\분노/억울한/img144.jpg",
+    "score": 0.24465918387306693,
+    "detected_emotions": [
+      "무섭다"
+    ],
+    "detected_situations": [],
+    "expected_emotion": "무섭다",
+    "expected_situation": "직장",
+    "top_5": [
+      {
+        "filename": "img144.jpg",
+        "score": 0.24465918387306693,
+        "combined_sim": 0.2679759980981692,
+        "dual_sim": 0.19025328401449504,
+        "kobert_sim": 0.11715382251973436,
+        "clip_sim": 0.299902476256636,
+        "category": "분노",
+        "subcategory": "억울한"
+      },
+      {
+        "filename": "img136.jpg",
+        "score": 0.21414597873530955,
+        "combined_sim": 0.23455478514955336,
+        "dual_sim": 0.16652543043540732,
+        "kobert_sim": 0.0738202269372054,
+        "clip_sim": 0.3055832356827102,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img130.jpg",
+        "score": 0.21155606301900415,
+        "combined_sim": 0.23171804152072897,
+        "dual_sim": 0.16451144651497956,
+        "kobert_sim": 0.08515291828621242,
+        "clip_sim": 0.2835492388581302,
+        "category": "분노",
+        "subcategory": "스트레스 받는"
+      },
+      {
+        "filename": "img043.jpg",
+        "score": 0.21115971555726468,
+        "combined_sim": 0.23128392185646196,
+        "dual_sim": 0.16420323419247104,
+        "kobert_sim": 0.08190298214054609,
+        "clip_sim": 0.28765361227035846,
+        "category": "기쁨",
+        "subcategory": "신이 난"
+      },
+      {
+        "filename": "img080.jpg",
+        "score": 0.20945421515670312,
+        "combined_sim": 0.22941588103987995,
+        "dual_sim": 0.16287699476262388,
+        "kobert_sim": 0.0726868430070989,
+        "clip_sim": 0.29816222239591134,
+        "category": "당황",
+        "subcategory": "당황"
+      }
+    ],
+    "emotion_match": true,
+    "situation_match": false
+  }
+]

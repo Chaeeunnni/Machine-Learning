@@ -158,7 +158,7 @@ def main():
     ]
 
     print("\n" + "=" * 80)
-    print("🎯 하이브리드(KoBERT + CLIP) 짤 추천 테스트!")
+    print("하이브리드(KoBERT + CLIP) 짤 추천 테스트!")
     print("=" * 80)
 
     for i, dialogue in enumerate(test_cases, 1):
@@ -166,15 +166,15 @@ def main():
         result = recommender.recommend(dialogue)
 
         if result is None:
-            print("❌ 추천 실패")
+            print("추천 실패")
             continue
 
-        print(f"🧠 입력: {dialogue}")
-        print(f"🎯 추천: {result['best_image']}")
-        print(f"📊 최종 점수: {result['score']:.4f}")
-        print(f"😊 감지 감정: {result['emotions']}")
-        print(f"🏢 감지 상황: {result['situations']}")
-        print(f"🏆 Top 5:")
+        print(f"입력: {dialogue}")
+        print(f"추천: {result['best_image']}")
+        print(f"최종 점수: {result['score']:.4f}")
+        print(f"감지 감정: {result['emotions']}")
+        print(f"감지 상황: {result['situations']}")
+        print(f"Top 5:")
         for j, item in enumerate(result['top_5'], 1):
             print(f"   {j}. {item['filename']} - {item['category']}/{item['subcategory']} ({item['score']:.4f})")
 
