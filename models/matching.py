@@ -57,7 +57,7 @@ class HybridMatcher:
                      '발전', '성장', '진전', '향상', '나아', '좋아']
         }
 
-        # 🔥 상황 키워드 대폭 확장
+        # 상황 키워드 확장
         self.situation_keywords = {
             '직장': ['회사', '직장', '상사', '동료', '업무', '일', '근무', '직장인', '회사원',
                    '막내', '팀', '프로젝트', '회의', '야근', '퇴사', '이직'],
@@ -76,67 +76,49 @@ class HybridMatcher:
                     '성장', '발전', '기술', '능력', '실력', '새로운', '도시', '변화']
         }
 
-    def analyze_text_features(self, text):
-        """향상된 텍스트 분석 - 더 정확한 매칭"""
+    def analyze_emotions(self, text):
+        """감정 분석 - 개선된 버전"""
+        if not text:
+            return []
+
         detected_emotions = []
+        text_lower = text.lower()
+
+        for emotion, keywords in self.emotion_keywords.items():
+            for keyword in keywords:
+                if keyword in text_lower:
+                    detected_emotions.append(emotion)
+                    break  # 감정당 한 번만 추가
+
+        return detected_emotions
+
+    def analyze_situations(self, text):
+        """상황 분석 - 개선된 버전"""
+        if not text:
+            return []
+
         detected_situations = []
+        text_lower = text.lower()
 
+        for situation, keywords in self.situation_keywords.items():
+            for keyword in keywords:
+                if keyword in text_lower:
+                    detected_situations.append(situation)
+                    break  # 상황당 한 번만 추가
+
+        return detected_situations
+
+    def analyze_text_features(self, text):
+        """향상된 텍스트 분석"""
         try:
-            print(f"[DEBUG] 분석 텍스트: '{text}'")
+            detected_emotions = self.analyze_emotions(text)
+            detected_situations = self.analyze_situations(text)
 
-            # 감정 키워드 검출 (개선된 로직)
-            for emotion, keywords in self.emotion_keywords.items():
-                found = False
-                for keyword in keywords:
-                    if keyword in text:
-                        detected_emotions.append(emotion)
-                        print(f"[DEBUG] 감정 '{emotion}' 매칭: '{keyword}' in '{text}'")
-                        found = True
-                        break
-                if found:
-                    continue
-
-            # 상황 키워드 검출 (개선된 로직)
-            for situation, keywords in self.situation_keywords.items():
-                found = False
-                for keyword in keywords:
-                    if keyword in text:
-                        detected_situations.append(situation)
-                        print(f"[DEBUG] 상황 '{situation}' 매칭: '{keyword}' in '{text}'")
-                        found = True
-                        break
-                if found:
-                    continue
-
-            # 🔥 복합 감정 처리 추가
-            detected_emotions = self.handle_complex_emotions(text, detected_emotions)
-
-            print(f"[DEBUG] 최종 분석 결과 - 감정: {detected_emotions}, 상황: {detected_situations}")
             return detected_emotions, detected_situations
 
         except Exception as e:
             print(f"[!] 텍스트 분석 예외: {e}")
             return [], []
-
-    def handle_complex_emotions(self, text, current_emotions):
-        """복합 감정 처리"""
-        # 복합 감정 패턴 매칭
-        complex_patterns = {
-            '기쁘다': ['설레', '기대', '새로운.*기대', '성공.*기뻐', '합격.*기뻐'],
-            '무섭다': ['걱정.*돼', '불안.*해', '.*하지만.*걱정', '.*면서도.*불안'],
-            '슬프다': ['실망.*스러', '안.*좋아서.*실망', '생각보다.*안.*좋'],
-            '자신하다': ['늘고.*있', '조금씩.*늘', '발전.*하', '성장.*하']
-        }
-
-        import re
-        for emotion, patterns in complex_patterns.items():
-            for pattern in patterns:
-                if re.search(pattern, text):
-                    if emotion not in current_emotions:
-                        current_emotions.append(emotion)
-                        print(f"[DEBUG] 복합 감정 매칭: '{emotion}' by pattern '{pattern}'")
-
-        return current_emotions
 
     def detect_negative_context(self, text):
         """부정적 맥락 감지"""
@@ -155,11 +137,10 @@ class HybridMatcher:
         return None
 
     def calculate_metadata_bonus(self, text_emotions, text_situations, image_filename, text):
-        """메타데이터 기반 보너스 점수 계산 - 완전히 수정"""
+        """메타데이터 기반 보너스 점수 계산"""
         try:
             metadata = self.find_metadata_by_filename(image_filename)
             if not metadata:
-                print(f"[DEBUG] 메타데이터 없음: {image_filename}")
                 return 1.0
 
             bonus = 1.0
@@ -168,7 +149,7 @@ class HybridMatcher:
             if self.detect_negative_context(text) and metadata.get('category') == '기쁨':
                 bonus *= 0.2
 
-            # 1. 카테고리 매칭
+            # 카테고리 매칭
             category = metadata.get('category', '')
             subcategory = metadata.get('subcategory', '')
 
@@ -186,158 +167,123 @@ class HybridMatcher:
                 elif emotion == '자신하다' and subcategory == '자신하는':
                     bonus += 0.6
 
-            # 2. 태그 매칭
-            tags = metadata.get('tags', [])
-            for emotion in text_emotions:
-                emotion_base = emotion.replace('다', '')
-                for tag in tags:
-                    if emotion_base in tag or tag in emotion:
-                        bonus += 0.3
-                        break
-
-            # 3. 사용 맥락 매칭
-            usage_context = metadata.get('usage_context', [])
-            for situation in text_situations:
-                if situation in usage_context:
-                    bonus += 0.4
-
-            # 4. 텍스트 설명에서 키워드 매칭
-            description = metadata.get('text_description', '').lower()
-            for emotion in text_emotions:
-                if emotion.replace('다', '') in description:
-                    bonus += 0.2
-
-            # 5. 직접적인 키워드 매칭
-            text_words = text.replace('.', ' ').replace(',', ' ').split()
-            for word in text_words:
-                if len(word) > 1 and word in description:
-                    bonus += 0.15
-                    break
-
             return min(bonus, 3.0)
 
         except Exception as e:
             print(f"[!] 보너스 계산 예외 ({image_filename}): {e}")
-            return 1.0  # 기본값 반환
+            return 1.0
 
-    def find_best_match_hybrid(self, hybrid_encoder, text, image_embs, image_files):
-        """하이브리드 방식으로 최적 매치 찾기 - 안전화 버전"""
+    def find_best_match_hybrid(self, encoder, text, image_embs, image_files):
+        """
+        ✅ 수정된 하이브리드 매칭 - CLIPEncoder와 호환
 
-        # 기본값 초기화
-        combined_similarities = None
-        dual_similarities = None
-        kobert_sims = None
-        clip_sims = None
-
+        Args:
+            encoder: CLIPEncoder 또는 HybridEncoder 인스턴스
+            text: 입력 텍스트 (문자열)
+            image_embs: 이미지 임베딩 배열
+            image_files: 이미지 파일 경로 리스트
+        """
         try:
             print(f"[DEBUG] 이미지 임베딩 차원: {image_embs.shape}")
 
-            # 방법 1: 결합된 임베딩 사용
-            try:
-                combined_text_emb = hybrid_encoder.get_text_embedding(text)
-                print(f"[DEBUG] 결합 텍스트 임베딩 차원: {len(combined_text_emb)}")
-                combined_similarities = cosine_similarity([combined_text_emb], image_embs)[0]
-                print("[DEBUG] 결합 임베딩 유사도 계산 성공")
-            except Exception as e:
-                print(f"[!] 결합 임베딩 실패: {e}")
+            # 🔧 텍스트 임베딩 생성 (문자열을 임베딩으로 변환)
+            if hasattr(encoder, 'get_text_embedding'):
+                # CLIPEncoder 사용
+                text_emb = encoder.get_text_embedding(text)
+                print(f"[DEBUG] CLIP 텍스트 임베딩 차원: {len(text_emb)}")
 
-            # 방법 2: 각각 계산 후 결합
-            try:
-                dual_similarities, kobert_sims, clip_sims = hybrid_encoder.get_dual_similarities(text, image_embs)
-                print("[DEBUG] 듀얼 유사도 계산 성공")
-            except Exception as e:
-                print(f"[!] 듀얼 유사도 실패: {e}")
+                # 듀얼 유사도 시도 (있으면)
+                if hasattr(encoder, 'get_dual_similarities'):
+                    try:
+                        # 감정/상황 분석
+                        emotions, situations = self.analyze_text_features(text)
 
-            # 최종 유사도 결정
-            if combined_similarities is not None and dual_similarities is not None:
-                final_similarities = 0.7 * combined_similarities + 0.3 * dual_similarities
-                print("[DEBUG] 하이브리드 방식 사용")
-            elif combined_similarities is not None:
-                final_similarities = combined_similarities
-                print("[DEBUG] 결합 임베딩만 사용")
-            elif dual_similarities is not None:
-                final_similarities = dual_similarities
-                print("[DEBUG] 듀얼 유사도만 사용")
+                        # ✅ 임베딩을 전달 (문자열이 아님!)
+                        combined_similarities, text_similarities, weighted_similarities = encoder.get_dual_similarities(
+                            text_emb, image_embs, emotions, situations
+                        )
+                        print("[DEBUG] 듀얼 유사도 계산 성공")
+                        final_similarities = combined_similarities
+
+                    except Exception as e:
+                        print(f"[!] 듀얼 유사도 실패: {e}")
+                        # 기본 유사도 계산
+                        final_similarities = cosine_similarity([text_emb], image_embs)[0]
+
+                else:
+                    # 기본 유사도 계산
+                    final_similarities = cosine_similarity([text_emb], image_embs)[0]
+
+            elif hasattr(encoder, 'get_dual_similarities'):
+                # HybridEncoder 사용
+                emotions, situations = self.analyze_text_features(text)
+                final_similarities, _, _ = encoder.get_dual_similarities(text, image_embs)
+                print("[DEBUG] HybridEncoder 듀얼 유사도 사용")
+
             else:
-                print("[!] 모든 방식 실패, CLIP 폴백 사용")
-                clip_text_emb = hybrid_encoder.get_clip_text_embedding(text)
-                final_similarities = cosine_similarity([clip_text_emb], image_embs)[0]
-                kobert_sims = np.zeros_like(final_similarities)
-                clip_sims = final_similarities
+                # 폴백: 기본 CLIP 방식
+                if hasattr(encoder, 'clip_encoder'):
+                    text_emb = encoder.clip_encoder.get_text_embedding(text)
+                else:
+                    text_emb = encoder.encode_text(text)  # 다른 인터페이스 시도
 
-        except Exception as e:
-            print(f"[!] 전체 유사도 계산 실패: {e}")
-            try:
-                clip_text_emb = hybrid_encoder.clip_encoder.get_text_embedding(text)
-                final_similarities = cosine_similarity([clip_text_emb], image_embs)[0]
-                kobert_sims = np.zeros_like(final_similarities)
-                clip_sims = final_similarities
-            except Exception as final_e:
-                print(f"[!] 최종 폴백도 실패: {final_e}")
-                final_similarities = np.random.random(len(image_files))
-                kobert_sims = np.zeros_like(final_similarities)
-                clip_sims = np.zeros_like(final_similarities)
+                final_similarities = cosine_similarity([text_emb], image_embs)[0]
+                print("[DEBUG] 폴백 유사도 계산 사용")
 
-        # 텍스트 분석 (반드시 튜플 반환 보장)
-        result = self.analyze_text_features(text)
-        if result is None or len(result) != 2:
-            text_emotions, text_situations = [], []
-        else:
-            text_emotions, text_situations = result
+            # 텍스트 분석 (한 번만 수행)
+            emotions, situations = self.analyze_text_features(text)
 
-        # 부정적 맥락 보정
-        try:
+            # 부정적 맥락 보정
             if self.detect_negative_context(text):
                 for i, img_file in enumerate(image_files):
                     metadata = self.find_metadata_by_filename(os.path.basename(img_file))
                     if metadata and metadata.get('category', '') == '기쁨':
                         final_similarities[i] *= 0.2
+
+            # 메타데이터 보너스 적용
+            enhanced_similarities = []
+            for i, sim in enumerate(final_similarities):
+                try:
+                    image_filename = os.path.basename(image_files[i])
+                    bonus = self.calculate_metadata_bonus(emotions, situations, image_filename, text)
+                    enhanced_score = sim * bonus
+                    enhanced_similarities.append(enhanced_score)
+                except Exception as e:
+                    print(f"[!] 보너스 계산 실패 (이미지 {i}): {e}")
+                    enhanced_similarities.append(sim)
+
+            enhanced_similarities = np.array(enhanced_similarities)
+
+            # 최고 매치 찾기
+            best_idx = np.argmax(enhanced_similarities)
+            best_score = enhanced_similarities[best_idx]
+
+            # Top 5 결과
+            top_5_indices = np.argsort(enhanced_similarities)[-5:][::-1]
+            top_5_results = []
+
+            for i in top_5_indices:
+                try:
+                    image_filename = os.path.basename(image_files[i])
+                    metadata = self.find_metadata_by_filename(image_filename)
+
+                    result_info = {
+                        'filename': image_filename,
+                        'score': float(enhanced_similarities[i]),
+                        'combined_sim': float(final_similarities[i]),
+                        'category': metadata.get('category', '알 수 없음') if metadata else '알 수 없음',
+                        'subcategory': metadata.get('subcategory', '알 수 없음') if metadata else '알 수 없음'
+                    }
+                    top_5_results.append(result_info)
+                except Exception as e:
+                    print(f"[!] Top 5 결과 생성 실패 (인덱스 {i}): {e}")
+
+            return best_idx, float(best_score), top_5_results, emotions, situations
+
         except Exception as e:
-            print(f"[!] 부정적 맥락 보정 실패: {e}")
-
-        # 메타데이터 보너스 적용 (안전하게)
-        enhanced_similarities = []
-        for i, sim in enumerate(final_similarities):
-            try:
-                image_filename = os.path.basename(image_files[i])
-                bonus = self.calculate_metadata_bonus(text_emotions, text_situations, image_filename, text)
-                if bonus is None:
-                    bonus = 1.0
-                enhanced_score = sim * bonus
-                enhanced_similarities.append(enhanced_score)
-            except Exception as e:
-                print(f"[!] 보너스 계산 실패 (이미지 {i}): {e}")
-                enhanced_similarities.append(sim)  # 원본 유사도 사용
-
-        enhanced_similarities = np.array(enhanced_similarities)
-
-        # 최고 매치 찾기
-        best_idx = np.argmax(enhanced_similarities)
-        best_score = enhanced_similarities[best_idx]
-
-        # Top 5 결과
-        top_5_indices = np.argsort(enhanced_similarities)[-5:][::-1]
-        top_5_results = []
-        for i in top_5_indices:
-            try:
-                image_filename = os.path.basename(image_files[i])
-                metadata = self.find_metadata_by_filename(image_filename)
-
-                result_info = {
-                    'filename': image_filename,
-                    'score': enhanced_similarities[i],
-                    'combined_sim': combined_similarities[i] if combined_similarities is not None else 0,
-                    'dual_sim': dual_similarities[i] if dual_similarities is not None else 0,
-                    'kobert_sim': kobert_sims[i] if kobert_sims is not None else 0,
-                    'clip_sim': clip_sims[i] if clip_sims is not None else 0,
-                    'category': metadata.get('category', '알 수 없음') if metadata else '알 수 없음',
-                    'subcategory': metadata.get('subcategory', '알 수 없음') if metadata else '알 수 없음'
-                }
-                top_5_results.append(result_info)
-            except Exception as e:
-                print(f"[!] Top 5 결과 생성 실패 (인덱스 {i}): {e}")
-
-        return best_idx, best_score, top_5_results, text_emotions, text_situations
+            print(f"[!] 하이브리드 매칭 전체 실패: {e}")
+            # 최종 폴백
+            return 0, 0.0, [], ["오류"], ["오류상황"]
 
 
 # 테스트용 메인 함수
